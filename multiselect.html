@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>multiselect</title>
+    <script>
+        function abc()
+    {
+var a=document.getElementById("option");
+a.value="";
+var x=document.getElementById("select");
+for(var i=0;i<x.options.length;i++)
+{
+    if(x.options[i].selected===true)
+    {
+        a.value += "</br>"+ x.options[i].value+"";
+        document.getElementById("option").innerHTML=a.value;
+        document.getElementById("option").style.color="red";
+    }
+} 
+if(a.value==""){
+    document.getElementById("option").innerHTML="please select atleast one"
+    document.getElementById("option").style.color="white";
+
+}
+}
+    </script>
+    <style>
+        body{
+          text-align:center;
+          position:absolute;
+          top:30%;
+          left:40%;
+          color: navy;
+          border: 2px solid teal;
+          background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <select id="select" multiple>
+    <option value="java">java</option>
+    <option value="c">c</option>
+    <option value="python">python</option>
+    <option value="javascript">javascript</option>
+    <option value="pearl">pearl</option>
+    <option value="angular">angular</option>
+    <option value="express">express</option>
+    <option value="node">node</option>
+    <option value="ruby">ruby</option>
+    <input type="button" value="select" onclick="abc()">
+    </select>
+    <span id="option"></span>
+</body>
+</html>
